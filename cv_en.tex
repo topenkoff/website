@@ -1,0 +1,119 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{textcomp}
+    \usepackage{hyperref}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T2A]{fontenc}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+    \usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\begin{document}
+\vspace*{-40pt}
+
+%================== Profile ==================%
+\vspace*{-10pt}
+\begin{center}
+    \textbf{{\huge \scshape {Denis Kayshev}}}\\
+    \vspace*{10pt}
+    \begin{tabular}{c c}
+        Moscow, Russia & \url{https://github.com/topenkoff} \\
+        \href{mailto:topenkoff@gmail.com}{topenkoff@gmail.com} & \url{https://t.me/topenkoff} \\
+    \end{tabular}
+    \vspace*{15pt}
+\end{center}
+
+%================== Experience ==================%
+\header{Work Experience}
+\vspace{1mm}
+
+\textbf{Rambler\&Co} \\
+\text{Software Engineer} \hfill Jun 2021 - Present\\
+\vspace{-1mm}
+\begin{itemize} \itemsep -1pt
+	\item Upgrade news representation - transition to unified format for storing and processing news text with structure validation; add backward compatibility with the old format; update parser in aggregator
+	\item Migrate to PostgreSQL 14 - clean up database from unused tables/relations, fix extensions usage(ltree, btree\_gist), update diesel to 2.0
+	\item Migrate core API to full async-await syntax with updating actix/futures/tokio versions
+	\item Develop of a library for converting Draft.js to HTML in Rust
+\end{itemize}
+\text{Junior Software Engineer} \hfill Apr 2020 - Jun 2021\\
+\begin{itemize} \itemsep -1pt
+	\item Develop of a distributed pipeline for news content preparation
+	\item Increase speed of passing CI/CD pipeline for several project by 2.5-3 times
+	\item Develop a basic docker image used by CI job to build python packages with CFFI for macOS
+\end{itemize}
+
+\textbf{MSTU «STANKIN»} \\
+\text{Lecturer} \hfill Sep 2021 - Jan 2022\\
+\vspace{-1mm}
+\begin{itemize} \itemsep -1pt
+	\item Lecturing on web-development
+	\item Preparation of a curriculum, a study guide for laboratory work/seminars
+\end{itemize}
+
+\textbf{Yandex.Practicum} \\
+\text{Code Reviewer} \hfill Sep 2020 - Sep 2021\\
+\vspace{-1mm}
+\begin{itemize} \itemsep -1pt
+	\item Check student-written code and send feedback on the written code
+	\item Change workflow of checking student\textquotesingle{}s work and create a checklist to simplify this process
+	\item Interviewing reviewers to the team, onboarding
+\end{itemize}
+
+\textbf{Ostrovok.ru} \\
+\text{Junior Python Developer} \hfill Jul 2019 - Mar 2020\\
+\vspace{-1mm}
+\begin{itemize} \itemsep -1pt
+	\item Develop and support service for promoting SPA in search engines
+	\item Develop and support service for SEO satellites
+	\item Develop services for integrating a separate SEO site with the main product and its backend part
+\end{itemize}
+
+%================== Skills ==================%
+\header{Skills}
+\begin{tabular}{ l l }
+	Languages:  & rust, python, golang \\
+	Frameworks: & actix, tokio, serde, diesel, asyncio, aiohttp, fastapi \\
+    Tools:      & postgresql, redis, rabbitmq, docker, k8s, ci/cd \\
+\end{tabular}
+\vspace{2mm}
+
+%================== Education ==================%
+\header{Education}
+\textbf{MSTU «STANKIN»}\hfill Moscow, Russia\\
+M.S. in Information technology \hfill Sep 2019 - Jun 2021\\
+\vspace{2mm}
+\textbf{MSTU «STANKIN»}\hfill Moscow, Russia\\
+B.S. in Information technology \hfill Sep 2015 - Jun 2019\\
+\vspace{2mm}
+
+%================== Projects ==================%
+\header{Projects}
+{\textbf{\href{https://github.com/topenkoff/poetry-release}{poetry-release}}}\\
+Release managment plugin for poetry\\
+
+\vspace*{2mm}
+{\textbf{\href{https://github.com/hit-box/hitbox}{hitbox}}}\\
+A high-performance caching framework\\
+\vspace*{2mm}
+
+%================== Activities ==================%
+\header{Activities}
+{\textbf{\href{https://www.youtube.com/watch?v=gpf_KOAmgzY&t=3040s}{RamblerMeetup\&Python}}}\\
+I spoke about a way of using Rust for Python instead of C\\
+\vspace*{2mm}
+
+\
+\end{document}

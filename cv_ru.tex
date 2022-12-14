@@ -1,0 +1,120 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{textcomp}
+    \usepackage{hyperref}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T2A]{fontenc}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+    \usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\begin{document}
+\vspace*{-40pt}
+
+%================== Profile ==================%
+\vspace*{-10pt}
+\begin{center}
+    \textbf{{\huge \scshape {Денис Кайшев}}}\\
+    \vspace*{10pt}
+    \begin{tabular}{c c}
+        Москва, Россия & \url{https://github.com/topenkoff} \\
+        \href{mailto:topenkoff@gmail.com}{topenkoff@gmail.com} & \url{https://t.me/topenkoff} \\
+    \end{tabular}
+    \vspace*{15pt}
+\end{center}
+
+%================== Experience ==================%
+\header{Опыт работы}
+\vspace{1mm}
+
+\textbf{Rambler\&Co} \\
+\text{Инженер разработчик} \hfill Июнь 2021 - Наст. время\\
+\vspace{-1mm}
+\begin{itemize} \itemsep -1pt
+	\item Обновление формата представления новостей - переход на унифицированный формат хранения и обработки текста новости c валидацией структуры, добавлена поддержка обратной совместимости со старым форматом, обновление парсера новостей
+	\item Переход на PostgreSQL 14 - очистка базы данных от неиспользуемых таблиц/связей, исправление использования расширений (ltree, btree\_gist), обновление diesel до 2.0
+	\item Обновление core API - полный рефакторинг с поддержкой async-await синтаксиса и обновление версий actix/futures/tokio
+	\item Разработка библиотеки для конвертации Draft.js в HTML на Rust
+\end{itemize}
+\text{Младший инженер разработчик} \hfill Апрель 2020 - Июнь 2021\\
+\begin{itemize} \itemsep -1pt
+    \item Разработка распределенного пайплайна для подготовки новостного контента
+    \item Оптимизация CI/CD и ускорение прохождения пайплайнов проектов(\~2.5-3 раза)
+    \item Разработка базового docker образа для сборки в CI python package c CFFI для macOS
+\end{itemize}
+
+\textbf{МГТУ «СТАНКИН»} \\
+\text{Лектор} \hfill Сентябрь 2021 - Январь 2022\\
+\vspace{-1mm}
+\begin{itemize} \itemsep -1pt
+    \item Чтение лекций по дисциплине «Web-программирование»
+    \item Составление учебного плана
+    \item Подготовка материалов для лабораторных работ/семинаров
+\end{itemize}
+
+\textbf{Яндекс.Практикум} \\
+\text{Code Reviewer} \hfill Сентябрь 2020 - Сентябрь 2021\\
+\vspace{-1mm}
+\begin{itemize} \itemsep -1pt
+    \item Проверка написанного студентом кода и отправка feedback\textquotesingle{}a по написанному коду
+    \item Переработка флоу проверки работ, составление чеклистов проверки, для других ревьюверов
+    \item Набор ревьюверов в команду, онбординг
+\end{itemize}
+
+\textbf{Ostrovok.ru} \\
+\text{Junior Python Developer} \hfill Июль 2019 - Март 2020\\
+\vspace{-1mm}
+\begin{itemize} \itemsep -1pt
+    \item Разработка и поддержка сервиса для продвижения SPA в поисковых системах
+    \item Разработка сервиса для SEO-саттелитов
+    \item Доработка сервисов для интеграции отдельного SEO-сайта с основным продуктом
+\end{itemize}
+
+%================== Skills ==================%
+\header{Навыки}
+\begin{tabular}{ l l }
+	Languages:  & rust, python, golang \\
+	Frameworks: & actix, tokio, serde, diesel, asyncio, aiohttp, fastapi \\
+    Tools:      & postgresql, redis, rabbitmq, docker, k8s, ci/cd \\
+\end{tabular}
+\vspace{2mm}
+
+%================== Education ==================%
+\header{Образование}
+\textbf{МГТУ «СТАНКИН»}\hfill Москва, Россия\\
+Магистр, Информатика и вычислительная техника \hfill Сентябрь 2019 - Июнь 2021\\
+\vspace{2mm}
+\textbf{МГТУ «СТАНКИН»}\hfill Москва, Россия\\
+Бакалавр, Информационные системы и технологии \hfill Сентябрь 2015 - Июнь 2019\\
+\vspace{2mm}
+
+%================== Projects ==================%
+\header{Projects}
+{\textbf{\href{https://github.com/topenkoff/poetry-release}{poetry-release}}}\\
+Release managment plugin for poetry\\
+
+\vspace*{2mm}
+{\textbf{\href{https://github.com/hit-box/hitbox}{hitbox}}}\\
+A high-performance caching framework\\
+\vspace*{2mm}
+
+%================== Activities ==================%
+\header{Activities}
+{\textbf{\href{https://www.youtube.com/watch?v=gpf_KOAmgzY&t=3040s}{RamblerMeetup\&Python}}}\\
+Рассказывал про возможность использования Rust вместо С для написания расширений в Python
+\vspace*{2mm}
+
+\
+\end{document}

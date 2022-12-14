@@ -1,0 +1,72 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Generate PDF
+      shell: bash
+      run: |
+        mkdir artifact
+        sudo apt-get update && \
+          DEBIAN_FRONTEND=noninteractive \
+          sudo apt-get install \
+              -y --no-install-recommends \
+              texlive-latex-base \
+              texlive-latex-extra \
+              texlive-fonts-recommended \
+              texlive-lang-cyrillic
+
+        pdflatex cv_en.tex && mv cv_en.pdf artifact/
+        pdflatex cv_ru.tex && mv cv_ru.pdf artifact/
+        mv index.html artifact/
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: pages
+        path: artifact
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: pages
+        path: artifact.tar
+
+    - name: Extract artifact
+      shell: bash
+      run: |
+        mv artifact.tar site
+
+    - name: Upload pages
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: "site/"
+
+    - name: Deploy pages
+      id: deployment
+      uses: actions/deploy-pages@v1
