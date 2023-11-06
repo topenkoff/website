@@ -1,0 +1,147 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{enumitem}
+    \usepackage{amsmath}
+    \usepackage{textcomp}
+    \usepackage{hyperref}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T2A]{fontenc}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+    \usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\begin{document}
+\vspace*{-40pt}
+
+%================== Profile ==================%
+\vspace*{-10pt}
+\begin{center}
+    \textbf{{\huge \scshape {Denis Kayshev}}}\\
+    \vspace*{10pt}
+    \begin{tabular}{l l}
+        Moscow, Russia & \url{https://github.com/topenkoff} \\
+        \href{mailto:topenkoff@gmail.com}{topenkoff@gmail.com} & \url{https://t.me/topenkoff} \\
+    \end{tabular}
+    \vspace*{15pt}
+\end{center}
+
+%================== Experience ==================%
+\header{Work Experience}
+\vspace{1mm}
+
+%\textbf{TBD} \\
+%\text{TBD} \hfill TBD TBD - TBD TBD\\
+%\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
+%    \item TBD
+%    \item TBD
+%\end{itemize}
+%\begin{table}[h!]
+%    \begin{tabular}{ l l }
+%        Tech stack:& \\
+%        Languages  & TDB \\
+%        Frameworks & TDB \\
+%        Tools      & TDB \\
+%    \end{tabular}
+%\end{table}
+%\vspace{\baselineskip}
+
+\textbf{Rambler\&Co} \\
+\text{Software Engineer, Rambler/Media backend team} \hfill Jun 2021 - Present\\
+\vspace{-1mm}
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=2pt,label={-}]
+    \item Together with team, architected and implemented a orchestrator service for news content pipeline
+    \item Upgrade internal analytics service - build new system atop clickhouse, migrate historical data, implementation real-time data update
+    \item Upgrade news representation - transition to unified format for storing and processing news text with structure validation; add backward compatibility with the old format; update parser in aggregator; develop of a library for converting Draft.js to HTML in Rust
+    \item Migrate to PostgreSQL 14 - clean up database from unused tables/relations, fix extensions usage(ltree, btree\_gist), update diesel to 2.0
+    \item Migrate core API to full async-await syntax with updating actix/futures/tokio versions
+\end{itemize}
+\text{Junior Software Engineer, Rambler/Media backend team} \hfill Apr 2020 - Jun 2021\\
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
+    \item Develop of a distributed pipeline for news content preparation
+    \item Increase speed of passing CI/CD pipeline for several project by 2.5-3 times
+    \item Develop a CI pipeline for building python package with CFFI for macOS on linux servers
+\end{itemize}
+\begin{table}[h!]
+    \begin{tabular}{ l l }
+        Tech stack:& \\
+        Languages  & rust, python, golang \\
+        Frameworks & actix, tokio, serde, diesel, asyncio, aiohttp, fastapi \\
+        Tools      & postgresql, redis, clickhouse, rabbitmq, docker, k8s, ci/cd \\
+    \end{tabular}
+\end{table}
+
+\textbf{MSUT «STANKIN»} \\
+\text{Lecturer, Faculty of Computer Science and Engineering} \hfill Sep 2021 - Jan 2022\\
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
+    \item Lecturing on web-development
+    \item Preparation of a curriculum, a study guide for laboratory work/seminars
+\end{itemize}
+\vspace{\baselineskip}
+
+\textbf{Yandex.Practicum} \\
+\text{Code Reviewer, Middle Python developer course} \hfill Sep 2020 - Sep 2021\\
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
+    \item Check student-written code and send feedback on the written code
+    \item Change workflow of checking student\textquotesingle{}s work and create a checklist to simplify this process
+    \item Interviewing reviewers to the team, onboarding
+\end{itemize}
+\vspace{\baselineskip}
+
+\textbf{Ostrovok.ru} \\
+\text{Junior Python Developer, Marketing department} \hfill Jul 2019 - Mar 2020\\
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
+    \item Develop and support service for promoting SPA in search engines
+    \item Develop and support service for SEO satellites
+    \item Develop services for integrating a separate SEO site with the main product and its backend part
+\end{itemize}
+\begin{table}[h!]
+    \begin{tabular}{ l l }
+        Tech stack:& \\
+        Languages  & python \\
+        Frameworks & django \\
+        Tools      & postgresql, redis, nginx, docker \\
+    \end{tabular}
+\end{table}
+
+%================== Education ==================%
+\header{Education}
+\textbf{MSUT «STANKIN»}\hfill Moscow, Russia\\
+M.S. in Computer Science and Engineering \hfill Sep 2019 - Jun 2021\\
+\vspace{2mm}
+\textbf{MSUT «STANKIN»}\hfill Moscow, Russia\\
+B.S. in Information systems and technologies \hfill Sep 2015 - Jun 2019\\
+\vspace{2mm}
+
+\newpage
+
+%================== Projects ==================%
+\header{Projects}
+{\textbf{\href{https://github.com/topenkoff/poetry-release}{poetry-release}}}\\
+Release managment plugin for poetry\\
+
+\vspace*{2mm}
+{\textbf{\href{https://github.com/hit-box/hitbox}{hitbox}}}\\
+A high-performance caching framework\\
+\vspace*{2mm}
+
+%{\textbf{\href{https://github.com/ebalancer/ebalancer}{ebalancer}}}\\
+%High-performance reverse-proxy server\\
+
+%================== Activities ==================%
+\header{Activities}
+{\textbf{\href{https://www.youtube.com/watch?v=gpf_KOAmgzY&t=3040s}{RamblerMeetup\&Python}}}\\
+I spoke about a way of using Rust for Python instead of C\\
+\vspace*{2mm}
+
+\end{document}

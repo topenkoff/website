@@ -1,0 +1,147 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{enumitem}
+    \usepackage{amsmath}
+    \usepackage{textcomp}
+    \usepackage{hyperref}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T2A]{fontenc}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+    \usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\begin{document}
+\vspace*{-40pt}
+
+%================== Profile ==================%
+\vspace*{-10pt}
+\begin{center}
+    \textbf{{\huge \scshape {Денис Кайшев}}}\\
+    \vspace*{10pt}
+    \begin{tabular}{l l}
+        Москва, Россия & \url{https://github.com/topenkoff} \\
+        \href{mailto:topenkoff@gmail.com}{topenkoff@gmail.com} & \url{https://t.me/topenkoff} \\
+    \end{tabular}
+    \vspace*{15pt}
+\end{center}
+
+%================== Experience ==================%
+\header{Опыт работы}
+\vspace{1mm}
+
+%\textbf{TBD} \\
+%\text{TBD} \hfill TBD TBD - TBD TBD\\
+%\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
+%    \item TBD
+%    \item TBD
+%\end{itemize}
+%\begin{table}[h!]
+%    \begin{tabular}{ l l }
+%        Tech stack:& \\
+%        Languages  & TDB \\
+%        Frameworks & TDB \\
+%        Tools      & TDB \\
+%    \end{tabular}
+%\end{table}
+%\vspace{\baselineskip}
+
+\textbf{Rambler\&Co} \\
+\text{Инженер разработчик, Отдел бэкенд разработки Медиа и Сервисы} \hfill Июнь 2021 - Наст. время\\
+\vspace{-1mm}
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=2pt,label={-}]
+    \item Cовместно с командой, разработал архитектуру и реализовал оркестратор для пайплайна новостного контента
+    \item Обновил систему для аналитики - создание нового сервиса поверх clickhouse'a, миграция исторических данных, реализация real-time обновления данных
+    \item Обновление формата представления новостей - переход на унифицированный формат хранения и обработки текста новости c валидацией структуры, добавлена поддержка обратной совместимости со старым форматом, обновление парсера новостей; разработал библиотеку для конвертации Draft.js в HTML на Rust
+    \item Переход на PostgreSQL 14 - очистка базы данных от неиспользуемых таблиц/связей, исправление использования расширений (ltree, btree\_gist), обновление diesel до 2.0
+    \item Обновление core API - полный рефакторинг с поддержкой async-await синтаксиса и обновление версий actix/futures/tokio
+\end{itemize}
+\text{Младший инженер разработчик, Отдел бэкенд разработки Медиа и Сервисы} \hfill Апрель 2020 - Июнь 2021\\
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
+    \item Разработка распределенного пайплайна для подготовки новостного контента
+    \item Оптимизация CI/CD и ускорение прохождения пайплайнов проектов(\~2.5-3 раза)
+    \item Создание CI пайплайна для сборки python package c CFFI для macOS на linux серверах
+\end{itemize}
+\begin{table}[h!]
+    \begin{tabular}{ l l }
+        Tech stack:& \\
+        Languages  & rust, python, golang \\
+        Frameworks & actix, tokio, serde, diesel, asyncio, aiohttp, fastapi \\
+        Tools      & postgresql, redis, clickhouse, rabbitmq, docker, k8s, ci/cd \\
+    \end{tabular}
+\end{table}
+
+\textbf{МГТУ «СТАНКИН»} \\
+\text{Лектор, Кафедра информационных технологий и вычислительных систем} \hfill Сентябрь 2021 - Январь 2022\\
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
+    \item Чтение лекций по дисциплине «Web-программирование»
+    \item Составление учебного плана, подготовка материалов для лабораторных работ/семинаров
+\end{itemize}
+\vspace{\baselineskip}
+
+\textbf{Яндекс.Практикум} \\
+\text{Code Reviewer, курс Мидл Python-разработчик} \hfill Сентябрь 2020 - Сентябрь 2021\\
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
+    \item Проверка написанного студентом кода и отправка feedback\textquotesingle{}a по написанному коду
+    \item Переработка флоу проверки работ, составление чеклистов проверки, для других ревьюверов
+    \item Набор ревьюверов в команду, онбординг
+\end{itemize}
+\vspace{\baselineskip}
+
+\textbf{Ostrovok.ru} \\
+\text{Junior Python Developer, Marketing department} \hfill Июль 2019 - Март 2020\\
+\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
+    \item Разработка и поддержка сервиса для продвижения SPA в поисковых системах
+    \item Разработка сервиса для SEO-саттелитов
+    \item Доработка сервисов для интеграции отдельного SEO-сайта с основным продуктом
+\end{itemize}
+\begin{table}[h!]
+    \begin{tabular}{ l l }
+        Tech stack:& \\
+        Languages  & python \\
+        Frameworks & django \\
+        Tools      & postgresql, redis, nginx, docker \\
+    \end{tabular}
+\end{table}
+
+%================== Education ==================%
+\header{Образование}
+\textbf{МГТУ «СТАНКИН»}\hfill Москва, Россия\\
+Магистр, Информатика и вычислительная техника \hfill Сентябрь 2019 - Июнь 2021\\
+\vspace{2mm}
+\textbf{МГТУ «СТАНКИН»}\hfill Москва, Россия\\
+Бакалавр, Информационные системы и технологии \hfill Сентябрь 2015 - Июнь 2019\\
+\vspace{2mm}
+
+\newpage
+
+%================== Projects ==================%
+\header{Projects}
+{\textbf{\href{https://github.com/topenkoff/poetry-release}{poetry-release}}}\\
+Release managment plugin for poetry\\
+
+\vspace*{2mm}
+{\textbf{\href{https://github.com/hit-box/hitbox}{hitbox}}}\\
+A high-performance caching framework\\
+\vspace*{2mm}
+
+%{\textbf{\href{https://github.com/ebalancer/ebalancer}{ebalancer}}}\\
+%High-performance reverse-proxy server\\
+
+%================== Activities ==================%
+\header{Activities}
+{\textbf{\href{https://www.youtube.com/watch?v=gpf_KOAmgzY&t=3040s}{RamblerMeetup\&Python}}}\\
+Рассказывал про возможность использования Rust вместо С для написания расширений для Python
+\vspace*{2mm}
+
+\end{document}
