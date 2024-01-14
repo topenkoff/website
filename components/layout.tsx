@@ -11,8 +11,8 @@ type Props = {
 };
 
 function layoutTitle(title: string | undefined): string {
-  const base = "kayshev.com";
-  return title ? title : base;
+  const name = "kayshev.com";
+  return title ? `${title} | ${name}` : name;
 }
 
 const Layout: FC<Props> = ({ title, children }) => (

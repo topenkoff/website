@@ -8,7 +8,7 @@ import { Color } from "../components/icons";
 
 export default function Home() {
   return (
-    <Layout title={"kayshev.com"}>
+    <Layout title={"мотъ, кутила, повѣса"}>
       <IndexBackground />
       <Footer color={Color.White}/>
     </Layout>
