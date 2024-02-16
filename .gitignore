@@ -41,3 +41,4 @@ artifact
 *.aux
 *.out
 *.log
+*.pdf
