@@ -11,13 +11,9 @@
     "export": "npm run build && npm run build:cv"
   },
   "dependencies": {
-    "next": "^14",
+    "next": "^16.2.0",
     "react": "^18",
-    "react-dom": "^18",
-    "react-tsparticles": "^2.12.2",
-    "tsparticles-engine": "^2.12.0",
-    "tsparticles-plugin-polygon-mask": "^2.12.0",
-    "tsparticles-slim": "^2.12.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
