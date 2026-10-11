@@ -11,15 +11,8 @@
     \raggedright
     \usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
 
-\newcommand{\lineunder} {
-    \vspace*{-8pt} \\
-    \hspace*{-18pt} \hrulefill \\
-}
-
-\newcommand{\header} [1] {
-    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
-    \vspace*{-6pt} \lineunder
-}
+\errorcontextlines=20
+\input{common.tex}
 
 \begin{document}
 \vspace*{-40pt}
@@ -40,100 +33,124 @@
 \header{Work Experience}
 \vspace{1mm}
 
-%\textbf{TBD} \\
-%\text{TBD} \hfill TBD TBD - Present\\
-%\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
-%    \item TBD
-%    \item TBD
-%\end{itemize}
-%\begin{table}[h!]
-%    \begin{tabular}{ l l }
-%        Tech stack:& \\
-%        Languages  & TDB \\
-%        Frameworks & TDB \\
-%        Tools      & TDB \\
-%    \end{tabular}
-%\end{table}
-%\vspace{\baselineskip}
+\begin{company}
+    \name Avito
 
-\textbf{Avito} \\
-\text{Senior Backend Engineer, AI Lab, LLM} \hfill Mar 2025 - Present\\
-\vspace{1mm}
-%\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=2pt,label={-}]
-%    \item
-%\end{itemize}
-\text{Backend Engineer, AI Lab, LLM} \hfill Dec 2023 - Feb 2025\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
-    \item Development and optimization of the service architecture for working with LLM
-\end{itemize}
-\begin{table}[h!]
-    \begin{tabular}{ l l }
+    \begin{position}
+        \role Senior Backend Engineer, AI Lab, LLM
+        \dates Mar 2025 - Present
+        \begin{responsibilities}
+            \item Designed and developed an LLM Gateway with authentication, authorization, request routing, and rate limiting
+            \item Built and maintained LLM inference infrastructure, including model deployment, lifecycle management, and scaling
+            \item Developed usage tracking, billing, and budget management systems for LLM services
+            \item Contributed to GPU infrastructure planning and development in collaboration with infrastructure teams
+            \item Participated in the implementation and oversight of company-wide technical initiatives within the unit
+        \end{responsibilities}
+    \end{position}
+
+    \begin{position}
+        \role Backend Engineer, AI Lab, LLM
+        \dates Dec 2023 - Feb 2025
+        \begin{responsibilities}
+            \item Developed LLM-based solutions in collaboration with product teams, including an AI assistant for a messenger, smart suggestions in chats, and other product use cases
+        \end{responsibilities}
+    \end{position}
+
+    \begin{techstack}
         Tech stack:& \\
         Languages  & python, golang, cpp, cuda \\
         Frameworks & vllm, sglang, transformers, pytorch \\
         Tools      & cuda toolkit, k8s, slurm \\
-    \end{tabular}
-\end{table}
+    \end{techstack}
+\end{company}
 
-\textbf{Rambler\&Co} \\
-\text{Software Engineer, Rambler/Media backend team} \hfill Jun 2021 - Nov 2023\\
-\vspace{-1mm}
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=2pt,label={-}]
-    \item Together with team, architected and implemented a orchestrator service for news content pipeline
-    \item Upgrade internal analytics service - build new system atop clickhouse, migrate historical data, implementation real-time data update
-    \item Upgrade news representation - transition to unified format for storing and processing news text with structure validation; add backward compatibility with the old format; update parser in aggregator; develop of a library for converting Draft.js to HTML in Rust
-    \item Migrate to PostgreSQL 14 - clean up database from unused tables/relations, fix extensions usage(ltree, btree\_gist), update diesel to 2.0
-    \item Migrate core API to full async-await syntax with updating actix/futures/tokio versions
-\end{itemize}
-\text{Junior Software Engineer, Rambler/Media backend team} \hfill Apr 2020 - Jun 2021\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
-    \item Develop of a distributed pipeline for news content preparation
-    \item Increase speed of passing CI/CD pipeline for several project by 2.5-3 times
-    \item Develop a CI pipeline for building python package with CFFI for macOS on linux servers
-\end{itemize}
-\begin{table}[h!]
-    \begin{tabular}{ l l }
+\begin{company}
+    \name Rambler\&Co
+
+    \begin{position}
+        \role Software Engineer, Rambler/Media backend team
+        \dates Jun 2021 - Nov 2023
+
+        \begin{responsibilities}
+            \item Together with team, architected and implemented a orchestrator service for news content pipeline
+            \item Upgrade internal analytics service - build new system atop clickhouse, migrate historical data, implementation real-time data update
+            \item Upgrade news representation - transition to unified format for storing and processing news text with structure validation; add backward compatibility with the old format; update parser in aggregator; develop of a library for converting Draft.js to HTML in Rust
+            \item Migrate to PostgreSQL 14 - clean up database from unused tables/relations, fix extensions usage(ltree, btree\_gist), update diesel to 2.0
+            \item Migrate core API to full async-await syntax with updating actix/futures/tokio versions
+        \end{responsibilities}
+    \end{position}
+
+    \begin{position}
+        \role Junior Software Engineer, Rambler/Media backend team
+        \dates Apr 2020 - Jun 2021
+
+        \begin{responsibilities}
+            \item Develop of a distributed pipeline for news content preparation
+            \item Increase speed of passing CI/CD pipeline for several project by 2.5-3 times
+            \item Develop a CI pipeline for building python package with CFFI for macOS on linux servers
+        \end{responsibilities}
+    \end{position}
+
+    \begin{techstack}
         Tech stack:& \\
         Languages  & rust, python, golang \\
         Frameworks & actix, tokio, serde, diesel, asyncio, aiohttp, fastapi \\
         Tools      & postgresql, redis, clickhouse, rabbitmq, docker, k8s \\
-    \end{tabular}
-\end{table}
+    \end{techstack}
+\end{company}
 
-\textbf{MSUT «STANKIN»} \\
-\text{Lecturer, Faculty of Computer Science and Engineering} \hfill Sep 2021 - Jan 2022\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
-    \item Lecturing on web-development
-    \item Preparation of a curriculum, a study guide for laboratory work/seminars
-\end{itemize}
-\vspace{\baselineskip}
+\begin{company}
+    \name MSUT «STANKIN»
 
-\textbf{Yandex.Practicum} \\
-\text{Code Reviewer, Middle Python developer course} \hfill Sep 2020 - Sep 2021\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
-    \item Check student-written code and send feedback on the written code
-    \item Change workflow of checking student\textquotesingle{}s work and create a checklist to simplify this process
-    \item Interviewing reviewers to the team, onboarding
-\end{itemize}
-\vspace{\baselineskip}
+    \begin{position}
+        \role Lecturer, Faculty of Computer Science and Engineering
+        \dates Sep 2021 - Jan 2022
+
+        \begin{responsibilities}
+            \item Lecturing on web-development
+            \item Preparation of a curriculum, a study guide for laboratory work/seminars
+        \end{responsibilities}
+    \end{position}
+\end{company}
+
+\begin{company}
+    \name Yandex.Practicum
+
+    \begin{position}
+        \role Code Reviewer, Middle Python developer course
+        \dates Sep 2020 - Sep 2021
+
+        \begin{responsibilities}
+            \item Check student-written code and send feedback on the written code
+            \item Change workflow of checking student\textquotesingle{}s work and create a checklist to simplify this process
+            \item Interviewing reviewers to the team, onboarding
+        \end{responsibilities}
+    \end{position}
+\end{company}
 
 \newpage
 
-\textbf{Ostrovok.ru} \\
-\text{Junior Python Developer, Marketing department} \hfill Jul 2019 - Mar 2020\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
-    \item Develop and support service for promoting SPA in search engines
-    \item Develop and support service for SEO satellites
-    \item Develop services for integrating a separate SEO site with the main product and its backend part
-\end{itemize}
-\begin{table}[h!]
-    \begin{tabular}{ l l }
+\begin{company}
+    \name Ostrovok.ru
+
+    \begin{position}
+        \role Junior Python Developer, Marketing department
+        \dates Jul 2019 - Mar 2020
+
+        \begin{responsibilities}
+            \item Develop and support service for promoting SPA in search engines
+            \item Develop and support service for SEO satellites
+            \item Develop services for integrating a separate SEO site with the main product and its backend part
+        \end{responsibilities}
+    \end{position}
+
+    \begin{techstack}
         Tech stack:& \\
         Languages  & python \\
         Frameworks & django \\
         Tools      & postgresql, redis, nginx, docker \\
-    \end{tabular}
-\end{table}
+    \end{techstack}
+\end{company}
 
 %================== Education ==================%
 \header{Education}

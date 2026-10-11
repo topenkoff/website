@@ -11,15 +11,8 @@
     \raggedright
     \usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
 
-\newcommand{\lineunder} {
-    \vspace*{-8pt} \\
-    \hspace*{-18pt} \hrulefill \\
-}
-
-\newcommand{\header} [1] {
-    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
-    \vspace*{-6pt} \lineunder
-}
+\errorcontextlines=20
+\input{common.tex}
 
 \begin{document}
 \vspace*{-40pt}
@@ -40,103 +33,128 @@
 \header{Опыт работы}
 \vspace{1mm}
 
-%\textbf{TBD} \\
-%\text{TBD} \hfill TBD TBD - Наст. время\\
-%\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
-%    \item TBD
-%    \item TBD
-%\end{itemize}
-%\begin{table}[h!]
-%    \begin{tabular}{ l l }
-%        Tech stack:& \\
-%        Languages  & TDB \\
-%        Frameworks & TDB \\
-%        Tools      & TDB \\
-%    \end{tabular}
-%\end{table}
-%\vspace{\baselineskip}
+\begin{company}
+    \name Avito
 
-\textbf{Avito} \\
-\text{Senior Backend Engineer, AI Lab, LLM} \hfill Март 2025 - Наст. время\\
-\vspace{1mm}
-% \begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=2pt,label={-}]
-%     \item
-% \end{itemize}
-\text{Backend Engineer, AI Lab, LLM} \hfill Декабрь 2023 - Февраль 2025\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
-    \item Разработка и оптимизация архитектуры сервиса для работы с большими языковыми моделями
-\end{itemize}
-\begin{table}[h!]
-    \begin{tabular}{ l l }
+    \begin{position}
+        \role Senior Backend Engineer, AI Lab, LLM
+        \dates Март 2025 - Наст. время
+        \begin{responsibilities}
+            \item Спроектировал и разработал LLM Gateway с поддержкой авторизации, аутентификации, маршрутизации запросов и управление лимитами
+            \item Разрабатывал и поддерживал инфраструктуру инфернса: развертывание моделей, управление их жизненным циклом и масштабирование
+            \item Разработал систему учета потребления LLM, биллинга и управления бюджетами пользователей и сервисов
+            \item Занимался вопросами развития GPU-инфраструктуры юнита cовместно с инфраструктурными командами
+            \item Занимался реализацией и сопровождением общекорпоративных тех. проектов в рамках юнита
+        \end{responsibilities}
+    \end{position}
+
+    \begin{position}
+        \role Backend Engineer, AI Lab, LLM
+        \dates Декабрь 2023 - Февраль 2025
+        \begin{responsibilities}
+            \item Разработка LLM-решений совместно с продуктовыми командами, включая AI-ассистента в мессенджере, саджесты в чатах и другие продуктовые сценарии
+        \end{responsibilities}
+    \end{position}
+
+    \begin{techstack}
         Tech stack:& \\
         Languages  & python, golang, cpp, cuda \\
         Frameworks & vllm, sglang, transformers, pytorch \\
         Tools      & cuda toolkit, k8s, slurm \\
-    \end{tabular}
-\end{table}
+    \end{techstack}
+\end{company}
 
-\textbf{Rambler\&Co} \\
-\text{Инженер разработчик, Отдел бэкенд разработки Медиа и Сервисы} \hfill Июнь 2021 - Ноябрь 2023\\
-\vspace{-1mm}
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=2pt,label={-}]
-    \item Cовместно с командой, разработал архитектуру и реализовал оркестратор для пайплайна новостного контента
-    \item Обновил систему для аналитики - создание нового сервиса поверх clickhouse'a, миграция исторических данных, реализация real-time обновления данных
-    \item Обновление формата представления новостей - переход на унифицированный формат хранения и обработки текста новости c валидацией структуры, добавлена поддержка обратной совместимости со старым форматом, обновление парсера новостей; разработал библиотеку для конвертации Draft.js в HTML на Rust
-    \item Переход на PostgreSQL 14 - очистка базы данных от неиспользуемых таблиц/связей, исправление использования расширений (ltree, btree\_gist), обновление diesel до 2.0
-    \item Обновление core API - полный рефакторинг с поддержкой async-await синтаксиса и обновление версий actix/futures/tokio
-\end{itemize}
-\text{Младший инженер разработчик, Отдел бэкенд разработки Медиа и Сервисы} \hfill Апрель 2020 - Июнь 2021\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
-    \item Разработка распределенного пайплайна для подготовки новостного контента
-    \item Оптимизация CI/CD и ускорение прохождения пайплайнов проектов(\~2.5-3 раза)
-    \item Создание CI пайплайна для сборки python package c CFFI для macOS на linux серверах
-\end{itemize}
-\begin{table}[h!]
-    \begin{tabular}{ l l }
+\begin{company}
+    \name Rambler\&Co
+
+    \begin{position}
+        \role Инженер разработчик, Отдел бэкенд разработки Медиа и Сервисы
+        \dates Июнь 2021 - Ноябрь 2023
+
+        \begin{responsibilities}
+            \item Cовместно с командой, разработал архитектуру и реализовал оркестратор для пайплайна новостного контента
+            \item Обновил систему для аналитики - создание нового сервиса поверх clickhouse'a, миграция исторических данных, реализация real-time обновления данных
+            \item Обновление формата представления новостей - переход на унифицированный формат хранения и обработки текста новости c валидацией структуры, добавлена поддержка обратной совместимости со старым форматом, обновление парсера новостей; разработал библиотеку для конвертации Draft.js в HTML на Rust
+            \item Переход на PostgreSQL 14 - очистка базы данных от неиспользуемых таблиц/связей, исправление использования расширений (ltree, btree\_gist), обновление diesel до 2.0
+            \item Обновление core API - полный рефакторинг с поддержкой async-await синтаксиса и обновление версий actix/futures/tokio
+        \end{responsibilities}
+    \end{position}
+
+    \begin{position}
+        \role Младший инженер разработчик, Отдел бэкенд разработки Медиа и Сервисы
+        \dates Апрель 2020 - Июнь 2021
+
+        \begin{responsibilities}
+            \item Разработка распределенного пайплайна для подготовки новостного контента
+            \item Оптимизация CI/CD и ускорение прохождения пайплайнов проектов(\~2.5-3 раза)
+            \item Создание CI пайплайна для сборки python package c CFFI для macOS на linux серверах
+        \end{responsibilities}
+    \end{position}
+
+    \begin{techstack}
         Tech stack:& \\
         Languages  & rust, python, golang \\
         Frameworks & actix, tokio, serde, diesel, asyncio, aiohttp, fastapi \\
         Tools      & postgresql, redis, clickhouse, rabbitmq, docker, k8s \\
-    \end{tabular}
-\end{table}
+    \end{techstack}
+\end{company}
 
-\textbf{МГТУ «СТАНКИН»} \\
-\text{Лектор, Кафедра информационных технологий и вычислительных систем} \hfill Сентябрь 2021 - Январь 2022\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
-    \item Чтение лекций по дисциплине «Web-программирование»
-    \item Составление учебного плана, подготовка материалов для лабораторных работ/семинаров
-\end{itemize}
-\vspace{\baselineskip}
+\begin{company}
+    \name МГТУ «СТАНКИН»
 
-\textbf{Яндекс.Практикум} \\
-\text{Code Reviewer, курс Мидл Python-разработчик} \hfill Сентябрь 2020 - Сентябрь 2021\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=0pt,label={-}]
-    \item Проверка написанного студентом кода и отправка feedback\textquotesingle{}a по написанному коду
-    \item Переработка флоу проверки работ, составление чеклистов проверки, для других ревьюверов
-    \item Набор ревьюверов в команду, онбординг
-\end{itemize}
-\vspace{\baselineskip}
+    \begin{position}
+        \role Лектор, Кафедра информационных технологий и вычислительных систем
+        \dates Сентябрь 2021 - Январь 2022
+
+        \begin{responsibilities}
+            \item Чтение лекций по дисциплине «Web-программирование»
+            \item Составление учебного плана, подготовка материалов для лабораторных работ/семинаров
+        \end{responsibilities}
+    \end{position}
+\end{company}
 
 \newpage
 
-\textbf{Ostrovok.ru} \\
-\text{Junior Python Developer, Marketing department} \hfill Июль 2019 - Март 2020\\
-\begin{itemize}[leftmargin=16pt,itemsep=0pt,topsep=-8pt,label={-}]
-    \item Разработка и поддержка сервиса для продвижения SPA в поисковых системах
-    \item Разработка сервиса для SEO-саттелитов
-    \item Доработка сервисов для интеграции отдельного SEO-сайта с основным продуктом
-\end{itemize}
-\begin{table}[h!]
-    \begin{tabular}{ l l }
+\begin{company}
+    \name Яндекс.Практикум
+
+    \begin{position}
+        \role Code Reviewer, курс Мидл Python-разработчик
+        \dates Сентябрь 2020 - Сентябрь 2021
+
+        \begin{responsibilities}
+            \item Проверка написанного студентом кода и отправка feedback\textquotesingle{}a по написанному коду
+            \item Переработка флоу проверки работ, составление чеклистов проверки, для других ревьюверов
+            \item Набор ревьюверов в команду, онбординг
+        \end{responsibilities}
+    \end{position}
+\end{company}
+
+\begin{company}
+    \name Ostrovok.ru
+
+    \begin{position}
+        \role Junior Python Developer, Marketing department
+        \dates Июль 2019 - Март 2020
+
+        \begin{responsibilities}
+            \item Разработка и поддержка сервиса для продвижения SPA в поисковых системах
+            \item Разработка сервиса для SEO-саттелитов
+            \item Доработка сервисов для интеграции отдельного SEO-сайта с основным продуктом
+        \end{responsibilities}
+    \end{position}
+
+    \begin{techstack}
         Tech stack:& \\
         Languages  & python \\
         Frameworks & django \\
         Tools      & postgresql, redis, nginx, docker \\
-    \end{tabular}
-\end{table}
+    \end{techstack}
+\end{company}
 
 %================== Education ==================%
 \header{Образование}
+
 \textbf{МГТУ «СТАНКИН»}\hfill Москва, Россия\\
 Магистр, Информатика и вычислительная техника \hfill Сентябрь 2019 - Июнь 2021\\
 \vspace{2mm}

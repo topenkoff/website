@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:cv": "mkdir -p dist/cv && pdflatex --output-directory=cv cv/en.tex && pdflatex --output-directory=cv cv/ru.tex && mv cv/en.pdf cv/ru.pdf dist/cv",
-    "export": "npm run build && npm run build:cv"
+    "build:web": "next build",
+    "build:cv": "bash cv/render.sh",
+    "export": "npm run build:web && npm run build:cv"
   },
   "dependencies": {
     "next": "^16.3.6",

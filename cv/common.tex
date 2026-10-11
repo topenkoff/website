@@ -1,0 +1,64 @@
+% ================== Settings ==================
+
+\newlength{\companyindent}
+\setlength{\companyindent}{12pt}
+
+
+% ================== Header ==================
+
+\newcommand{\lineunder}{%
+    \vspace*{-8pt}\\
+    \hspace*{-18pt}\hrulefill\\
+}
+
+\newcommand{\header}[1]{%
+    {\hspace*{-18pt}\vspace*{6pt}\textsc{#1}}%
+    \vspace*{-6pt}\lineunder
+}
+
+
+% ================== Company ==================
+
+\newenvironment{company}{%
+    \par\noindent
+
+    % Company name
+    \def\name##1\par{%
+        \noindent\textbf{##1}\par
+    }%
+
+    % Position
+    \def\position{%
+        \par\noindent\normalfont
+        \def\role{\ignorespaces}%
+        \def\dates{\unskip\hfill\ignorespaces}%
+    }%
+    \def\endposition{\par}%
+
+    % Responsibilities
+    \def\responsibilities{%
+        \begin{itemize}[
+            leftmargin=16pt,
+            itemsep=0pt,
+            topsep=2pt,
+            parsep=0pt,
+            partopsep=0pt,
+            label={-}
+        ]%
+    }%
+    \def\endresponsibilities{\end{itemize}}%
+
+    % Tech stack
+    \def\techstack{%
+        \par\vspace{2pt}
+        \noindent
+        \normalfont
+        \hspace*{6pt}%
+        \begin{tabular}{@{}ll}%
+    }%
+    \def\endtechstack{%
+        \end{tabular}\par
+    }%
+}{%
+    \par\vspace{12pt}%
+}
